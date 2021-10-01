@@ -8,15 +8,15 @@ set colorcolumn=80
 
 let g:colors_name="amaro"
 
-
 " colors {{{
 let s:black = "#000000"
+let s:liver = "#5b4849"
+let s:old_burgundy = "#453637"
 let s:black_coffee = "#403233"
 let s:slightly_blacker_coffee "#392d2e"
 let s:raisin_black = "#2b2222"
 let s:light_gray = "#dbd1d1"
 let s:platinum = "#ebe5e5"
-let s:old_burgundy = "#453637" " comments
 let s:new_york_pink = "#d68585"
 let s:candy_pink = "#e67575"
 let s:ocean_green = "#6bbf8e"
@@ -35,12 +35,12 @@ let s:mellow_apricot = "#ffc180"
 " fg color variables {{{
 let s:foreground = s:light_gray
 let s:foreground_alt = s:platinum
-let s:muted = s:old_burgundy
+let s:muted = s:liver
 " }}}
 
 " bg color variables {{{
 let s:background = s:black_coffee
-let s:bg_black = s:black
+let s:bg_light = s:old_burgundy
 let s:bg_barely_darker = s:slightly_blacker_coffee
 let s:bg_dark = s:raisin_black
 " let s:cursor = s:super_cyan
@@ -80,7 +80,7 @@ endfunction
 " popup menu {{{
 call s:create_highlight("Pmenu", { "fg": s:foreground,"bg": s:bg_dark })
 call s:create_highlight("PmenuThumb", { "bg": s:muted })
-call s:create_highlight("PmenuSBar", { "bg": s:bg_black })
+call s:create_highlight("PmenuSBar", { "bg": s:bg_light })
 call s:create_highlight("PmenuSel", { "fg": s:keyword_alt, "bg": s:bg_dark,"gui": "bold" })
 " }}}
 
@@ -164,7 +164,7 @@ call s:create_highlight("Comment", { "fg": s:muted, "gui": "italic" })
 hi! link SpecialComment Comment
 hi! link Delimeter Comment
 
-call s:create_highlight("Operator", { "fg": s:ice })
+call s:create_highlight("Operator", { "fg": s:foreground_alt })
 hi! link Special Operator
 
 call s:create_highlight("Type", { "fg": s:accent_3_alt })
